@@ -1,0 +1,299 @@
+	DESINGNER RESPONSIVO 'HTML-5'
+	------------------------------
+
+  O design responsivo é a chave para criar sites que funcionam bem em computadores, celulares, tablets e outros dispositivos, proporcionando uma navegação intuitiva e agradável para os usuários.
+----------------------------------------------------------------
+
+ **Mobile First
+
+  É uma estratégia de desenvolvimento é essencial para criar layouts objetivos e focados no conteúdo, proporcionando uma experiência otimizada para dispositivos móveis e, posteriormente, expandindo para outras telas.
+
+ 1- Adaptação do Layout: O site ajusta-se automaticamente à resolução da tela, evitando medidas fixas e permitindo uma adaptação natural.
+
+ 2- Simplificação para Dispositivos Móveis: Elementos da tela são simplificados para dispositivos móveis, considerando que os usuários têm menos tempo e atenção durante a navegação.
+
+ 3- Redimensionamento de Imagens e Vídeos: As mídias são redimensionadas para evitar sobrecarga na transferência de dados e garantir uma apresentação nítida.
+
+ 4- Ocultação de Elementos Desnecessários: Elementos irrelevantes são ocultados ou removidos em dispositivos menores.
+
+ 5- Adaptação de Botões e Menus para Telas Touch: Tamanhos de botões, links e menus são ajustados para interfaces touch, substituindo o ponteiro do mouse pelo dedo do usuário.
+
+
+ **Meta Tag Viewport
+
+  A Meta Tag Viewport é um elemento HTML que permite aos desenvolvedores controlar o comportamento do viewport em dispositivos móveis. Ela é adicionada ao cabeçalho da página e define propriedades como largura, escala e orientação do viewport.
+
+  -'O viewport é a área visível de uma página da web em um dispositivo.
+
+  -'Dispositivos móveis têm viewport padronizado para 980 pixels.
+
+  -'A Meta Tag Viewport resolve problemas de exibição e permite uma experiência responsiva para todos os usuários.
+
+ Na declaração do content é possível especificar uma diversidade de parâmetros, tais como:
+
+  width: define a largura do viewport.
+  height: define a altura do viewport.
+  initial-scale: define a escala inicial (zoom) do viewport.
+
+Para que possamos assegurar o funcionamento das regras responsivas em todos os dispositivos, devemos declarar que a largura do viewport será igual à mesma largura do dispositivo e que a escala inicial (zoom) é 1,
+----------------------------------------------------------------
+
+   **Media Type
+
+ O Media Type (ou tipo de mídia) é um atributo responsável por designar quais regras CSS serão aplicadas a um determinado tipo de dispositivo, garantindo a melhor apresentação do conteúdo sem a necessidade de alterá-lo.
+
+Através desse atributo, podemos personalizar o estilo de acordo com o dispositivo utilizado. Por exemplo:
+
+All: Aplica-se a todos os tipos de dispositivos.
+
+Braille: Para dispositivos táteis.
+
+Embossed: Para dispositivos que imprimem em braille.
+
+Handheld: Para dispositivos móveis com telas pequenas e baixa resolução.
+
+Print: Para impressoras.
+
+Projection: Para apresentações de slides.
+
+Screen: Para monitores com telas coloridas e resolução adequada.
+
+Speech: Para sintetizadores de voz ou leitores de tela.
+
+TTY: Para terminais, teletypes e dispositivos portáteis com display limitado.
+
+TV: Para televisores com baixa resolução e cores limitadas.
+
+ Essa flexibilidade permite adaptar o estilo conforme o contexto de uso.
+
+
+
+
+  Exemplos de inclusão do atributo media type:
+
+  1. Utilizando o atributo media na chamada de um arquivo CSS em um arquivo HTML:
+
+   *Nesse exemplo, estamos vinculando um arquivo CSS chamado “arquivo.css” ao nosso documento HTML.
+
+   O atributo media especifica para quais tipos de mídia esse estilo deve ser aplicado.
+
+   No caso, estamos usando media="print", o que significa que o estilo será aplicado apenas quando o usuário imprimir a página.
+
+  Exemplo: HTML
+
+<link rel="stylesheet" href="arquivo.css" type="text/css" media="print">
+
+
+
+  2. Utilizando o atributo media na chamada de um arquivo CSS em um arquivo XML:
+
+  Aqui, estamos definindo um arquivo CSS chamado “arquivo.css” para ser usado em um documento XML.
+
+  Novamente, o atributo media especifica o tipo de mídia.
+
+  Neste caso, usamos media="all", indicando que o estilo se aplica a todas as mídias.
+
+  Exemplo: XML
+
+<?xml-stylesheet rel="stylesheet" href="arquivo.css" media="all"?>
+
+
+
+  3. Utilizando a tag @import dentro da tag <style> em um arquivo HTML:
+
+  Aqui, estamos importando um arquivo CSS chamado “arquivo.css” dentro de uma tag <style> no próprio HTML.
+
+  O atributo media também pode ser usado aqui para especificar a mídia.
+
+  No exemplo, estamos usando media="screen", o que significa que o estilo se aplica a telas (como monitores).
+
+  Exemplo: HTML
+
+<style type="text/css" media="screen">
+  @import "arquivo.css";
+</style>
+
+
+
+  4. Utilizando a tag @import em um arquivo CSS:
+
+  Aqui, estamos importando um arquivo CSS chamado “estilo.css” diretamente dentro de outro arquivo CSS.
+
+  O @import é uma regra CSS que permite incluir estilos de outros arquivos.
+
+  No exemplo, estamos importando o estilo para ser usado quando a mídia for “print”.
+ 
+  Exemplo: CSS
+
+@import url("estilo.css") print;
+
+
+
+  5.Utilizando a tag @media em um arquivo CSS:
+
+  A regra @media permite aplicar estilos condicionalmente com base em determinadas condições de mídia.
+
+  Neste exemplo, estamos aplicando um fundo vermelho ao corpo (body) apenas quando a mídia for “screen” (ou seja, em telas de computador).
+
+  Exemplo: CSS
+
+@media screen {
+  body {
+    background-color: #F00;
+  }
+}
+----------------------------------------------------------------
+
+
+  **Media Types e Media Queries:
+
+  1. Media Types (Tipos de Mídia):
+Os Media Types definem para qual tipo de mídia o CSS de um site será direcionado.
+
+Atualmente, os tipos mais comuns são “screen” (para monitores) e “print” (para impressão).
+
+
+  2. Media Queries (Consultas de Mídia):
+Introduzidas no CSS3, as Media Queries permitem criar regras de estilo condicionais com base em características do dispositivo.
+
+São expressões que resultam em valores booleanos (verdadeiro ou falso).
+
+Permitem adaptar o layout responsivo com base em Media Features (como largura, altura, orientação etc.).
+
+
+   As principais características dos Media Features (características de mídia) usados em Media Queries:
+
+
+  -aspect-ratio:
+Proporção entre largura e altura.
+Não aceita os prefixos min/max.
+
+ -device-aspect-ratio:
+Proporção entre largura e altura do dispositivo.
+Não aceita os prefixos min/max.
+
+ -Color:
+Número de bits por cor.
+Aceita os prefixos min/max.
+
+ -color-index:
+Número de entradas na tabela de pesquisa de cores do dispositivo de saída.
+Aceita os prefixos min/max.
+
+ -Height:
+Altura da janela do navegador.
+Aceita os prefixos min/max.
+
+ -device-height:
+Altura da mídia.
+Aceita os prefixos min/max.
+
+ -Width:
+Largura da janela do navegador.
+Aceita os prefixos min/max.
+
+ -device-width:
+Largura da mídia.
+Aceita os prefixos min/max.
+
+ -Grid:
+Tipo de dispositivo (bitmap ou grid).
+Valores: 1 (grid) ou 0 (bitmap).
+Não aceita os prefixos min/max.
+
+ -Monochrome:
+Número de bits por pixel em um buffer de quadros monocromáticos.
+Aceita os prefixos min/max.
+
+ -Orientation:
+Orientação da mídia (portrait para vertical / retrato, landscape para horizontal / paisagem).
+Não aceita os prefixos min/max.
+
+ -Resolution:
+Resolução (densidade por pixel) utilizada pelo dispositivo.
+Valores em DPI ou DCM.
+Aceita os prefixos min/max.
+
+ -Scan:
+Tipo de formação de imagens para televisores (progressive ou interlace).
+Não aceita os prefixos min/max.
+
+
+
+  **Os principais operadores usados em Media Queries:
+
+ 1. not:
+Inverte o resultado de uma expressão.
+Exemplo: @media not screen { ... } (aplica regras quando NÃO é uma tela).
+
+ 2. only:
+Evita que navegadores antigos processem a expressão.
+Exemplo: @media only screen and (max-width: 768px) { ... } (aplica regras apenas para telas com largura máxima de 768px).
+
+ 3. and:
+Liga o Media Type à Media Feature.
+Permite combinar várias características.
+Exemplo: @media screen and (min-width: 1024px) and (orientation: landscape) { ... } (aplica regras para telas largas na orientação paisagem).
+
+ 4. , (vírgula):
+Junta expressões diferentes com o mesmo conjunto de regras.
+Funciona como um “ou” condicional.
+Exemplo: @media screen and (min-width: 768px), print { ... } (aplica regras para telas largas OU impressão).
+
+----------Operadores lógicos:------------
+
+  Os operadores (not), (and) e (only) são usados para combinar media features ou tipos de mídia.
+
+	TRADUÇÃO: (and= e), (not= não) e (only= apenas).
+---------------------------------
+----------MEDIA TYPE-----------
+
+  - media="all"     -> para todos tipos de midias.
+  - media="screen"  -> para monitores e telas.
+  - media="print"   -> para impressoras.
+  - media="speech"  -> sintetizadores de voz ou leitores de tela.
+
+
+--------MEDIA FEATURES---------
+
+  - media="screen and (orientation: portrait)"  -> para modo retrato.
+  - media="screen and (orientation: landscape)"  -> para modo paisagem.
+
+( media="screen and (max-width: 800px) ") -> para tablet
+
+
+---------MEDIA QUERY-------------
+
+	Combinam media types e media features para criar regras adaptáveis.
+	
+  *Media com combinação e operadores lógicos.
+--EXEMPLO:
+@media screen and (orientation: portrait) and (min-width: 440px)
+
+
+  __**OBS: medias queries, não permite media features declarada primeiro. Mas, permite operadores lógicos.
+
+|--------------------------NÃO PERMITE--------------------------|
+| @media (orientation: landscape) and (min-width: 1024px) {	
+|   p {
+|     text-align: center;
+|     padding: 20px;
+|   }
+| }
+ 
+
+|------------------PERMITE SIM----------------------
+| @media only screen and (grid: 0) {
+|   * { display: flex; margin:0;}
+| }
+|
+
+
+
+
+
+---------------------RESOLUÇÕES---------------------
+
+ * 320px até 425px (MOBILE)
+ * 426px até 768px (TABLET)
+ * 769px ou acima  (DESKTOP)
