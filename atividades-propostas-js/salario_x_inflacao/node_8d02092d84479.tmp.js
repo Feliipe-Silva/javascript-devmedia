@@ -6,7 +6,6 @@ console.log('3 - Comparação entre o percentual de salarial e o IPCA. \n');
 
 let digite_input = entrada.question('Digite o número da opção acima: ');
 console.log(`\nOpção escolhido: [ ${digite_input} ]`);
-console.log('\n');
 
 let salario_ano = 545;
 let salario_anterior = 510;
@@ -52,7 +51,6 @@ switch (Number(digite_input)) {
         
             let ano = salario.ano;
             let salarios = salario.Salario;
-            
             console.log(`Ano: `.padEnd(30, '.'), `${ano}`);
             console.log(`Salário mínimo `.padEnd(30, '.'), `R$: ${salarios},00\n`);
         };
