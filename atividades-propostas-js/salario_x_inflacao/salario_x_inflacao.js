@@ -8,13 +8,6 @@ let digite_input = entrada.question('Digite o número da opção acima: ');
 console.log(`\nOpção escolhido: [ ${digite_input} ]`);
 console.log('\n');
 
-let salario_ano = 545;
-let salario_anterior = 510;
-
-// let inflação = 6.50;
-
-let difereca = salario_ano - salario_anterior;
-let percentual_crescimento = (difereca / salario_anterior) * 100;
 
 let historico_salarial = [      // ARRAYS COLEÇÃO DE OBJETOS
     {salario: 510,      ano: '2010'},
@@ -56,7 +49,7 @@ switch (Number(digite_input)) {
             console.log(`Salário mínimo `.padEnd(30, '.'), `R$: ${salarios},00\n`);
         };
     break;
-
+    
     case 2:
         for (let i = 0; i < inflacoes_arrays.length; i++) {
 
@@ -68,27 +61,30 @@ switch (Number(digite_input)) {
             console.log(`Inflação IPCA: `.padEnd(30, '.'), `${inflacao_formatado}%\n`);
         };
     break;
-
+    
     case 3:   
-        for (let contador of historico_salarial) {
-
-            for (let inflacao of inflacoes_arrays) {
+        for (let contador = 0; contador < historico_salarial.length; contador++) {
         
-                let inflacao_ipca = inflacao.ipca;
-                inflacao_ipca = inflacao_ipca.toFixed(2).replace(".", ",");
-                let ano_salario_inflacao = contador.ano;
-                let salario_indices = contador.salario;
-        
-                console.log(`Ano: `.padEnd(30, "."), `${ano_salario_inflacao}`);
-                console.log(`Salário mínimo R$:`.padEnd(30, "."), `${salario_indices},00`);
-                console.log(`Crescimento Salarial: -`);
-                console.log(`Inflação IPCA: `.padEnd(30, "."), `${inflacao_ipca}%`);
-                console.log('\n');
-                break;
+            let ano_salario_inflacao = historico_salarial[contador].ano;
+            let salario_indices = historico_salarial[contador].salario;
+            let inflacao_ipca = inflacoes_arrays[contador].ipca;
+            inflacao_ipca = inflacao_ipca.toFixed(2).replace(".", ",");
+            
+            if (contador > 0) {
+                let salario_anterior = historico_salarial[contador - 1].salario;
+                let difereca = salario_indices - salario_anterior;
+                var percentual_crescimento = (difereca / salario_anterior) * 100;
+                percentual_crescimento = percentual_crescimento.toFixed(2).replace(".", ",");
             };
+            
+            console.log(`Ano: `.padEnd(30, "."), `${ano_salario_inflacao}`);
+            console.log(`Salário mínimo `.padEnd(30, "."), `R$: ${salario_indices},00`);
+            console.log(`Crescimento Salarial: `.padEnd(30, "."), `${percentual_crescimento}%`);
+            console.log(`Inflação IPCA: `.padEnd(30, "."), `${inflacao_ipca}%`);
+            console.log('\n');
         };
     break;
-
+    
     default:
         console.log("**Opção inválida!**".padStart(23, ' '));
     break;

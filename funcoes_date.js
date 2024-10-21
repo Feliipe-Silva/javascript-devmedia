@@ -1,17 +1,20 @@
 const agora = new Date();
 
-const ano = agora.getFullYear();
-const mes = agora.getMonth(); // Indexado a partir de 0
-const dia = agora.getDate();
-const horas = agora.getHours();
-const minutos = agora.getMinutes();
-const segundos = agora.getSeconds();
+const ano = agora.getFullYear();        // ANO
+const mes = agora.getMonth() + 1;       // INTERVALOS ENTRE [0] E [11]
+const dia = agora.getDate();        // DIA
+const horas = agora.getHours();     // HORAS
+const minutos = agora.getMinutes();     // MINUTOS
+const segundos = agora.getSeconds();        //SEGUNDOS
+const time = agora.getTime();       // número de milissegundos desde 1 de janeiro de 1970
 
-console.log(ano);
-console.log(mes);
-console.log(dia);
-console.log(horas);
-console.log(minutos);
-console.log(segundos);
+console.log('Ano: '+ ano);
+console.log('Mês: ' + mes);
+console.log('Dia: ' + dia);
+console.log('Horas: ' + horas);
+console.log('Minutos: ' + minutos);
+console.log('Segundos: ' + segundos);
+console.log('Dia espercifico: ' + agora.getDay());  // dia espercifico  DOMINGO = 0 E SABADO = 6
+console.log('Milissegundos: '+ time);
 
-console.log(agora.getDay());  // dia espercifico  DOMINDO = 0 E SABADO = 6
+//-------------------BLOCO DE NOTAS COM MAIS INFORMAÇÕES **
