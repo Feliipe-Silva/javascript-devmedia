@@ -18,3 +18,4 @@ console.log('Dia espercifico: ' + agora.getDay());  // dia espercifico  DOMINGO 
 console.log('Milissegundos: '+ time);
 
 //-------------------BLOCO DE NOTAS COM MAIS INFORMAÇÕES **
+//-------------------NA PASTA (resumo-JS) **
