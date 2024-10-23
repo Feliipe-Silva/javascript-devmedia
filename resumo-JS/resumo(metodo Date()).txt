@@ -114,3 +114,26 @@ Se você estiver no Brasil (UTC-3) e a hora local for 14:00, o método retornar�
 * .getHours(): Retorna a hora conforme o fuso horário local do sistema.
 
 * .getUTCHours(): Retorna a hora no formato UTC, independente do fuso horário local.
+-------------------------------------------------
+
+	Getters de conversão:
+	----------------------
+
+ O objeto Date possui métodos que retornam uma string com a data completa diferente. Eles são chamados de 'getters de conversão'.
+
+ Métodos do objeto Date(): O métodos anterior sempre retornam um valor do tipo number.
+
+--EXEMPLO: 
+.getFullYear()  // 2024
+.getMinutes()	// 43
+.getDay()	// 1
+
+
+ Além de number, podemos retorna esses valores convertido em 'string'.
+
+--EXEMPLO:
+.toDateString()	// Wed Oct 23 2024
+
+.toTimeString() // 14:14:31 GMT-0300 (Horário Padrão de Brasília)
+
+.toString()	// Wed Oct 23 2024 14:14:31 GMT-0300 (Horário Padrão de Brasília)
