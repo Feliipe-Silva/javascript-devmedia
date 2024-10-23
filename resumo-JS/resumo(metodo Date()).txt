@@ -1,0 +1,116 @@
+
+	COMANDOS DATE();
+	------------------
+
+ Conceitos UTC e timestamp:
+
+* UTC: É o Tempo Universal Coordenado. Referência para se calcular os fusos horários. Serve de base!
+
+ - Útil, conseguimos exibir um horário em cada data de fuso horário.
+
+ - Se alguém na china te enviou um email as 21:34 o horário que deve aparecer pra você é 10:34.
+
+--EXEMPLO: 
+
+	BRASIL		UTC		CHINA
+	10:34		13:34		21:34
+	------		------		------
+
+
+* TIMESTAMP: É uma representação numérica de uma data UTC. 
+
+ - Através dele conseguimos verificar quanto tempo se passou entre uma data e outra.
+
+
+ Através do UTC conseguimos manipular uma data independente do fuso horário e através do Timestamp conseguimos verificar a diferença entre uma data e outra.
+-------------------------------------------------
+
+	A diferença entre os métodos getTime(); e getMilliseconds();
+
+1. getTime():
+
+* Retorna o timestamp (número total de milissegundos) desde o 1º de janeiro de 1970 (também conhecido como Epoch time ou Unix time).
+
+* Ou seja, ele retorna o tempo total, em milissegundos, que já passou desde essa data.
+
+
+2. getMilliseconds():
+
+* Retorna apenas os milissegundos (de 0 a 999) da data atual, ou seja, a fração de segundo do objeto Date.
+
+* Ele retorna a parte de milissegundos do tempo representado pelo objeto Date, sem incluir o restante do timestamp.
+
+--Resumo:
+* getTime() fornece o tempo total em milissegundos desde 1970.
+
+* getMilliseconds() retorna apenas a parte de milissegundos (de 0 a 999) do tempo atual.
+
+
+ Esses métodos podem ser usados em conjunto, dependendo do que você precisa ao trabalhar com datas e horários.
+-------------------------------------------------
+
+	A diferença entre subtrair o tempo atual e o tempo de uma mensagem diretamente e usar o método getTimezoneOffset()
+
+1. Subtração direta entre o tempo atual e o tempo de uma mensagem:
+
+* Quando você subtrai o tempo atual (new Date().getTime()) do tempo de uma mensagem (ou qualquer outra data armazenada), você está basicamente calculando a diferença absoluta em milissegundos entre dois momentos no tempo.
+
+* Isso pode ser útil para medir intervalos de tempo, como "quantos milissegundos se passaram desde que uma mensagem foi enviada".
+
+--javascript:
+let tempoAtual = new Date().getTime();
+let tempoMensagem = new Date('2023-10-10T12:00:00').getTime();
+let diferenca = tempoAtual - tempoMensagem; 
+  //diferença em milissegundos
+
+
+2. Usando getTimezoneOffset():
+
+* Diferença entre fuso horário do local com o fuso horário de outro lugar!
+
+* O método getTimezoneOffset() retorna a diferença, em minutos, entre o horário local (do fuso horário do navegador/dispositivo) e o UTC (Tempo Universal Coordenado).
+
+* Ele não está relacionado diretamente à passagem do tempo, mas sim ao deslocamento de fuso horário. Por exemplo, se você está no fuso horário UTC-3, o getTimezoneOffset() retornará 180 (que são 3 horas em minutos).
+
+Isso é útil quando você quer ajustar ou normalizar datas e horas entre diferentes fusos horários.
+
+--javascript:
+let offset = new Date().getTimezoneOffset(); // Exemplo: 180 (3 horas)
+
+
+ Diferenças principais:
+* Subtração de tempos (método 1) mede intervalos entre dois momentos no tempo (quanto tempo se passou entre o envio de uma mensagem e o tempo atual, por exemplo).
+
+* getTimezoneOffset() (método 2) lida com fusos horários, ajudando a ajustar horários com base na diferença entre o tempo local e o UTC.
+-------------------------------------------------
+
+
+	getTime(); e valueOf();
+
+
+ Diferença principal:
+* getTime(): é um método específico de Date, usado para deixar claro que estamos buscando o timestamp de uma data.
+
+* valueOf(): é um método mais genérico que retorna o valor primitivo de um objeto, e no caso de Date, também retorna o timestamp.
+-------------------------------------------------
+
+
+	A diferença entre os métodos .getHours(); e .getUTCHours();
+
+1. .getHours():
+* Retorna a hora da data local (baseada no fuso horário do sistema onde o código está sendo executado).
+
+* Se você estiver no Brasil (UTC-3) e a hora local for 14:00, o método retornará 14.
+
+
+2. .getUTCHours():
+* Retorna a hora no fuso horário UTC (Tempo Universal Coordenado).
+
+* local e retorna o horário como se fosse no UTC.
+Se você estiver no Brasil (UTC-3) e a hora local for 14:00, o método retornará 17 (14:00 no Brasil = 17:00 no UTC).
+
+
+ Diferença principal:
+* .getHours(): Retorna a hora conforme o fuso horário local do sistema.
+
+* .getUTCHours(): Retorna a hora no formato UTC, independente do fuso horário local.
