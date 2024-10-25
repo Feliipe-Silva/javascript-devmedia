@@ -137,3 +137,147 @@ Se você estiver no Brasil (UTC-3) e a hora local for 14:00, o método retornar�
 .toTimeString() // 14:14:31 GMT-0300 (Horário Padrão de Brasília)
 
 .toString()	// Wed Oct 23 2024 14:14:31 GMT-0300 (Horário Padrão de Brasília)
+
+
+ .toString(): Retorna uma string que representa o objeto. Detalhes na sequência abaixo.
+
+  -- dia da semana (em inglês) em 3 letras.
+  -- mês (em inglês) com 3 letras.
+  -- dia do mês (em número).
+  -- ano.
+  -- hora minutos e segundos
+  -- fuso horário
+  -- nome do fuso horário
+
+//Wed Oct 23 2024 14:14:31 GMT-0300 (Horário Padrão de Brasília)
+
+
+ .toDateString(): Retorna uma string com a data. Detalhes na sequência abaixo.
+
+  -- dia da semana (em inglês) em 3 letras.
+  -- mês (em inglês) com 3 letras.
+  -- dia do mês (em número).
+  -- ano.
+  // Wed Oct 23 2024
+
+ .toTimeStrings(): Retorna uma string com o tempo. Detalhes na sequência abaixo.
+
+  -- hora minutos e segundos
+  -- fuso horário
+  -- nome do fuso horário
+  // 14:14:31 GMT-0300 (Horário Padrão de Brasília)
+
+ .toISOString(): Retorna uma string no formato universal (ISO 8601). Ou seja, fuso horário O (UTC). Detalhes na sequência abaixo.
+
+  -- ano.
+  -- mês.
+  -- dia.
+  -- T: Um delimitador entre data e tempo.
+  -- HH: Hora no formato de 24 horas (00 a 23).
+  -- mm: Minutos (00 a 59).
+  -- ss: Segundos (00 a 59).
+  -- sss: Milissegundos (000 a 999).
+  -- Z: no final indica que o horário está no fuso UTC.
+  // imprime: 2024-10-24T17:51:13.174Z
+
+-----------------CONTINUAÇÃO---------------------
+
+  AGORA ACRESCENTANDO 'LOCALE' ENTRE OS MÉTODOS:
+
+ .toLocaleString(): Retorna uma string com apenas a data e o tempo. 
+
+ -- Data e tempo
+ // imprime: 24/10/2024, 15:09:29
+
+
+ .toLocaleDateString(): Retorna string com apenas a data.
+
+ // imprime: 24/10/2024
+
+
+ .toLocaleTimeString(): Retorna string com apenas o tempo.
+
+  // imprime: 15:25:04
+-------------------CONTINUAÇÃO-------------------
+
+	PERSONALIZANDO OS MÉTODO PARA IMPRIME:
+
+const personalizando_data =  {
+    weekday: 'long', 	// segunda-feira
+    weekday: 'short', 	// seg.
+    weekday: 'narrow',	// S
+
+    month: "numeric", 	// 2
+    month: "2-digit", 	// 02
+    month: "long", 	// Março
+    month: "short", 	// Mar
+    month: "narrow", 	// M
+
+    year: 'numeric',	 // 2020
+    year: '2-digit',	 // 20
+
+    day: 'numeric',	 // 1
+    day: '2-digit',	 // 01
+};
+// sexta-feira, 25 de outubro de 2024
+
+console.log(dataAtual.toLocaleDateString('pt-BR', personalizandoData));
+
+-----------------------------
+const personalizandoTempo = {
+    hour: 'numeric', // 1
+    hour: '2-digit', // 01,
+
+    minute: 'numeric', // 1
+    minute: '2-digit', // 01,
+
+    second: 'numeric', // 1
+    second: '2-digit', // 01,
+  }
+// 14:04:36
+
+console.log( dataAtual.toLocaleTimeString('pt-BR', personalizandoTempo) );
+
+-----------------------------------
+const personalizandoDataTempo = {
+    dateStyle: "full", // segunda-feira, 9 de novembro de 2020
+    dateStyle: "long", // 9 de novembro de 2020
+    dateStyle: "medium", // 9 de nov. de 2020
+    dateStyle: "short", // 09/11/2020
+
+    timeStyle: "full", // 01:05:09 Horário Padrão de Brasília
+    timeStyle: "long", // 01:05:09 BRT
+    timeStyle: "medium", // 01:05:09
+    timeStyle: "short", // 01:05
+  }
+// 25 de out. de 2024, 14:10:07 Horário Padrão de Brasília
+
+console.log( dataAtual.toLocaleString('pt-BR', personalizandoDataTempo) );
+
+  NO ARRAY, APENAS UMA OPÇÃO VAI SER IMPRESSO TIPO: weekday, month, year, day, hour, minute, second, dateStyle e timeStyle.
+-------------------------------------------------
+
+	SETTERS
+	--------
+
+ Os métodos setters do objeto Date alteram uma parte específica da data.
+
+- Alteraveis:
+* ano
+* mês
+* dia
+* hora (0 à 23)
+* minutos (0 à 59)
+* segundos (0 à 59)
+* millisegundo
+
+--EXEMPLOS: 
+const dataAtual = new Date("2020-11-09 01:05:09");
+console.log(dataAtual.toDateString());
+// Impressão: Mon Nov 09 2020
+
+dataAtual.setTime(886302309000);
+console.log(dataAtual.toDateString());
+// Impressão: Sun Feb 01 1998
+
+ O método SETTER, também aceita o valor UTC.
