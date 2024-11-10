@@ -1,7 +1,7 @@
 
 // ------------------RESUMO SOBRE FUNÇÕES NA PASTA 'resumo-JS'-----------------------------
 
-//  FUNÇÃO SEM PARÂMETRO
+//----FUNÇÃO SEM PARÂMETRO
 function sempara(){
     return 'Olá, mundo!';
 };
@@ -11,7 +11,7 @@ console.log(mens);
 
 
 
-//  FUNÇÃO COM PARÂMETROS
+//----FUNÇÃO COM PARÂMETROS
 function retorna_media(nota_1, nota_2) {
 let media = (nota_1 + nota_2) / 2;
 let status;
@@ -38,7 +38,7 @@ console.log('\n');
 
 
 
-//  FUNÇÃO DE ARROW FUNCTION (ou função de seta)
+//----FUNÇÃO DE ARROW FUNCTION (ou função de seta)
 const retorna_media_aluno = (nota_1, nota_2) => {
 let media = (nota_1 + nota_2) / 2;
 let status;
@@ -60,7 +60,7 @@ console.log('2° aluno: '+aluno_02);
 
 
 
-// FUNCTION ARROW SIMPLES 
+//----FUNCTION ARROW SIMPLES 
 const soma_valores = (v1, v2) => { return (v1 + v2) / 2}; 
 
 let resultado = soma_valores(10, 5);
@@ -70,7 +70,7 @@ console.log(resultado); // Saída: 7,5
 
 
 
-// ARROW SIMPLES SEM (return declarado)
+//----ARROW SIMPLES SEM (return declarado)
 const soma = (a, b) => a + b;
 
 console.log(soma(15, 10)); // Saída: 25
@@ -94,3 +94,21 @@ let array_signos = [
     {"Nome": "Capricórnio", "DataInicio": "12-22",      "DataFim":"01-19"}
 ];
 
+const retorna_signo = (signos) => {
+
+    let data = new Date("2020-02-07 00:00:00");
+
+    let ano = data.getFullYear();
+
+    let data_inicio_signo = new Date(ano + "-" + signos[0]["DataInicio"] + " 00:00:00");
+    let data_fim_signo = new Date(ano + "-" + signos[0]["DataFim"] + " 23:59:59");
+
+    if( data >= data_inicio_signo && data <= data_fim_signo ){
+        return signos[0]["Nome"];
+    };
+
+};
+
+const nome_signo = retorna_signo(array_signos);
+
+console.log("O signo de hoje é: " + nome_signo);
