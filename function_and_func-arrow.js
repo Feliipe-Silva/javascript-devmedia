@@ -94,9 +94,7 @@ let array_signos = [
     {"Nome": "Capricórnio", "DataInicio": "12-22",      "DataFim":"01-19"}
 ];
 
-const retorna_signo = (signos) => {
-
-    let data = new Date("2020-02-07 00:00:00");
+const retorna_signo = (signos, data) => {
 
     let ano = data.getFullYear();
 
@@ -109,6 +107,8 @@ const retorna_signo = (signos) => {
 
 };
 
-const nome_signo = retorna_signo(array_signos);
+let data = new Date("2020-02-07 00:00:00");
+
+const nome_signo = retorna_signo(array_signos, data);
 
 console.log("O signo de hoje é: " + nome_signo);
