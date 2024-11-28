@@ -110,7 +110,9 @@ const retorna_signo = (signos, data) => {   // FUNC. ARROW
             if ( data >= data_inicio && data <= data_fim ){
                 return signo["Nome"];   // OUTRA MANEIRA DE ACESSA COLEÇÃO DE OBJETOS 
             };
+
         } else if (comparacao == "or") {
+            
             if ( data >= data_inicio || data <= data_fim ){
                 return signo["Nome"];   // OUTRA MANEIRA DE ACESSA COLEÇÃO DE OBJETOS 
             };
