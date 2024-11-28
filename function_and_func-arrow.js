@@ -94,23 +94,32 @@ let array_signos = [
     {"Nome": "Capricórnio", "DataInicio": "12-22",      "DataFim":"01-19"}
 ];
 
-const retorna_signo = (signos, data) => {
+const retorna_signo = (signos, data) => {   // FUNC. ARROW
 
     let ano = data.getFullYear();
 
-    for ( const signo of signos ) {
+    for ( const signo of signos ) {     // LOOP
 
         let data_inicio = new Date(ano + "-" + signo["DataInicio"] + " 00:00:00");
         let data_fim = new Date(ano + "-" + signo["DataFim"] + " 23:59:50");
 
-        if ( data >= data_inicio && data <= data_fim ){
-            return signo["Nome"];
+        let comparacao = signo["DataInicio"] == "12-22" ? "or" : "and";
+
+        if (comparacao == "and"){
+
+            if ( data >= data_inicio && data <= data_fim ){
+                return signo["Nome"];   // OUTRA MANEIRA DE ACESSA COLEÇÃO DE OBJETOS 
+            };
+        } else if (comparacao == "or") {
+            if ( data >= data_inicio || data <= data_fim ){
+                return signo["Nome"];   // OUTRA MANEIRA DE ACESSA COLEÇÃO DE OBJETOS 
+            };
         };
     };
 };
 
-let data = new Date("2020-02-07 00:00:00");
+let data = new Date();
 
-const nome_signo = retorna_signo(array_signos, data);
+const nome_signo = retorna_signo(array_signos, data);   // PASSANDO VALORES DE ARRAY PARA A => FUN. ARROW
 
 console.log("O signo de hoje é: " + nome_signo);
