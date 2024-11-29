@@ -94,34 +94,37 @@ let array_signos = [
     {"Nome": "Capricórnio", "DataInicio": "12-22",      "DataFim":"01-19"}
 ];
 
-const retorna_signo = (signos, data) => {   // FUNC. ARROW
+const verifica_data = (data, data_inicio, data_fim, tipo_comparacao) => {
+    
+    if (tipo_comparacao == "and") {
+        
+        return (data >= data_inicio && data <= data_fim)    // OUTRA MANEIRA DE ACESSA COLEÇÃO DE OBJETOS 
+        
+    } else if (tipo_comparacao == "or") {
+        
+        return (data >= data_inicio || data <= data_fim)    // OUTRA MANEIRA DE ACESSA COLEÇÃO DE OBJETOS 
+    };
+};
 
+const retorna_signos = (array_signos, data) => {      // FUNC. ARROW
+    
     let ano = data.getFullYear();
-
-    for ( const signo of signos ) {     // LOOP
-
+    
+    for (let signo of array_signos) {     // LOOP (leitura do objeto, array_signos) PELO FOR, OF
+    
         let data_inicio = new Date(ano + "-" + signo["DataInicio"] + " 00:00:00");
         let data_fim = new Date(ano + "-" + signo["DataFim"] + " 23:59:50");
-
-        let comparacao = signo["DataInicio"] == "12-22" ? "or" : "and";
-
-        if (comparacao == "and"){
-
-            if ( data >= data_inicio && data <= data_fim ){
-                return signo["Nome"];   // OUTRA MANEIRA DE ACESSA COLEÇÃO DE OBJETOS 
-            };
-
-        } else if (comparacao == "or") {
-            
-            if ( data >= data_inicio || data <= data_fim ){
-                return signo["Nome"];   // OUTRA MANEIRA DE ACESSA COLEÇÃO DE OBJETOS 
-            };
+        
+        let tipo_comparacao = signo["DataInicio"] == "12-22" ? "or" : "and";
+        
+        if(verifica_data(data, data_inicio, data_fim, tipo_comparacao)) {
+            return signo["Nome"];
         };
     };
 };
 
 let data = new Date();
 
-const nome_signo = retorna_signo(array_signos, data);   // PASSANDO VALORES DE ARRAY PARA A => FUN. ARROW
+const nome_signo = retorna_signos(array_signos, data);   // PASSANDO VALORES DE ARRAY PARA A => FUN. ARROW
 
 console.log("O signo de hoje é: " + nome_signo);
