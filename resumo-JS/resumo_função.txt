@@ -54,3 +54,14 @@ console.log(resultado); // Saída: 7.5
 const soma = (a, b) => a + b;
 
 console.log(soma(15, 10)); // Saída: 25
+
+
+
+
+
+// AQUI ABAIXO TEM O MESMO RESULTADO!
+colecao_signos[0].nome
+	ou
+colecao_signos[0]["Nome"]
+
+// QUANDO QUISER ACESSA COLEÇAO DE OBJETOS
