@@ -1,0 +1,81 @@
+
+ É muito comum utilizarmos um array em um projeto e por isso precisamos aprender como manipulá-lo.
+
+ Neste curso você aprenderá a manipular um array utilizando as seguintes funções nativas:
+
+ ● push
+ ● splice
+ ● pop
+ ● shift
+ ● forEach
+ ● map
+ ● filter
+ ● reduce
+ ● sort
+
+
+### POR QUER EXISTE FUNÇÕES NATIVAS
+ - Existem alguns códigos que utilizamos diversas vezes.
+
+ - Escrever esse códigos todas as vezes que precisamos é muito mais propicil a erros. Por isso existe função nativa (código pronto!).
+
+ - Funções nativas reduz códigos repetitivos e agiliza o processo de desenvolvimento.
+-------------------------------------------------
+
+	.PUSH()
+	-------
+ 
+ A função *push* em JavaScript é usada para adicionar um ou mais elementos ao final de um array, retornando o novo comprimento do array.
+
+-EX: 
+let dias_semana = ["domingo", "segunda", "terça"];
+
+dias_semana.push("quanta"); //adicionado na ultima posição
+-------------------------------------------------
+
+
+	.SPLICE()
+	---------
+
+ A função *splice* em JavaScript é usada para adicionar, remover ou substituir elementos em um array. Sua sintaxe é:
+
+-EX:
+array.splice(índiceInicial, númeroDeElementosParaRemover, ...elementosParaAdicionar);
+
+array.splice(2, 1,) // Removendo elemento da 3º posição (com índice 2)
+
+array.splice(3, 0, "quanta-feira") // Adicionando elemento na posição 4 (indice 3)
+
+array.splice(2, 0, "terça-feira") // Substituindo elemento
+-------------------------------------------------
+
+
+	.forEach()
+	----------
+
+ A função nativa *forEach* em JavaScript é usada para iterar sobre elementos de um array, executando uma função callback para cada item. Ela não retorna valores e não pode ser interrompida, diferentemente de um loop for.
+
+Sintaxe:
+array.forEach((elemento, índice, array) => {
+  // código a ser executado
+});
+
+
+-Pontos principais:
+ ● Parâmetros da callback: elemento (valor atual), índice (posição do elemento), array (o array completo, opcional).
+
+ ● Não retorna valor: Sempre retorna undefined.
+
+ ● Não interrompível: Não suporta break ou return para parar a execução.
+
+ ● Ideal para efeitos colaterais (como logs ou manipulações externas).
+-------------------------------------------------
+
+
+	.map()
+	------
+
+ A função nativa *map* em JavaScript cria um novo array ao aplicar no array de origem, sem modificar o array de indicado (o array de origem). Ideal para transformações em dados.
+
+
+
