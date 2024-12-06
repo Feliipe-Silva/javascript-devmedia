@@ -40,10 +40,11 @@ let curso = "Tecnologia"
 console.log(`Estudo ${curso}`);
 
  Template string, permite inserir variáveis junto com o texto, ou seja, tudo dentro de acentos graves.
+-------------------------------------------------
 
--------------------------------------------
 
 	OBTENDO TAMANHOS DE STRINGS
+	---------------------------
 
  Função length, ao chama-lá retornará o comprimento de uma string e arrays. Para obter comprimento de objeto é preciso usa o Object.keys(nomeObjeto).length.
 
@@ -61,12 +62,11 @@ if (cep.length != 9){
 EXEMPLO:
 let cep = 60755220;
 console.log(cep.toString().length)	// 8 
+-------------------------------------------------
 
-
----------------------------------------------------------
 
 	STRING MAIÚSCULAS E MENÚSCULAS
-------------------------------------------
+	-------------------------------
 	toUpperCase()  e  toLowerCase()
 
  Às vezes uma informação de acesso - por exemplo, um e-mail - pode ser cadastrada com letras maiúsculas ou minúsculas. Isso pode causar diferenças na validação dessa informação.
@@ -84,10 +84,11 @@ if ( email_digitado.toLowerCase() == email_acesso.toLowerCase() ) {
 
 
  Quando você coleta dados de formulários, como nomes de usuários ou senhas, pode ser útil normalizar a entrada de strings.
-----------------------------------------------
+-------------------------------------------------
 
   Removendo espaços do início e do final de uma string. Com o método trim();
-
+  ---------------------------------------------
+ 
 -EXEMPLO:
 let telefone_1 = "(99) 99999-9999";
 let telefone_2 = "    (99) 99999-9999    ";
@@ -127,6 +128,7 @@ console.log("telefone:".padEnd(20, '.') + tel);
 console.log("Email:".padEnd(20, '.') + email);
 -------------------------------------------------
 
+
 	Substituindo partes de string
 	-----------------------------
 	replace()
@@ -142,6 +144,7 @@ let texto = "A linguagem PHP é muito poderosa";
 console.log(texto.replace("PHP", "JavaScript"));
 // A linguagem JavaScript é muito poderosa
 -------------------------------------------------
+
 
 	Retornando partes de string
 	---------------------------
@@ -181,7 +184,6 @@ console.log(posicao);   // 2
 	Separando strings em partes
 	----------------------------
 		split()
-
 
  O método split() é muito útil para extrair dados de strings maiores. Assim é importante saber como é a composição da string para identificar o caractere que será usado como separador.
 
