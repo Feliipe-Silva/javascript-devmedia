@@ -78,3 +78,59 @@ function imprimirItem( produto, index ) {
 carrinho0.forEach(imprimirItem);
 console.log('\n');
 //------------------------------------------------------------------------------
+
+
+//          A função .map()  ------CÓDIGO FORNECIDO COMO EXEMPLO---------
+
+const carros = [
+    { marca: 'Fiat', modelo: 'Uno', anoFabricacao: 2015 },
+    { marca: 'GM', modelo: 'Onix', anoFabricacao: 2018 },
+    { marca: 'Ford', modelo: 'KA+', anoFabricacao: 2018 },
+    { marca: 'Fiat', modelo: 'Cronos', anoFabricacao: 2020 },
+];
+
+function retornaCarro(carro) { 
+    return carro.marca + ' ' + carro.modelo + ' ano: ' + carro.anoFabricacao;
+};
+
+const novosCarros = carros.map(retornaCarro); // map() RECEBI O VALOR QUE ESTA EM PARAMENTROS DA FUNÇÃO
+
+console.log(novosCarros);
+console.log('\n');
+/* *vai imprimir:
+    'Fiat Uno ano: 2015'
+    'GM Onix ano: 2018'
+    'Ford KA+ ano: 2018'
+    'Fiat Cronos ano: 2020'
+*/
+
+//-------------------------CONTINUAÇÃO---------------------------------
+
+const meses = [
+    "Janeiro", "Fevereiro", "Março", "Abril",
+    "Maio", "Junho", "Julho", "Agosto",
+    "Setembro", "Outubro", "Novembro", "Dezembro"
+];
+
+function abreviar(mes) {
+    return mes.substr(0,3);
+};
+
+const mesesAbreviados = meses.map(abreviar);
+
+console.log(mesesAbreviados);
+console.log('\n');
+/* * Vai imprimir
+[
+    'Jan', 'Fev', 'Mar',
+    'Abr', 'Mai', 'Jun',
+    'Jul', 'Ago', 'Set',
+    'Out', 'Nov', 'Dez'
+] */
+//----------------------CONTINUAÇÃO - NÃO FORNRCIDO-----------------------------
+
+
+const dias = ["domingo", "segunda", "terça"];
+const dias_map = dias.map(dia => dia.substring(0, 3));
+console.log(dias_map); // [ 'dom', 'seg', 'ter' ]
+//------------------------------------------------------------------------------
