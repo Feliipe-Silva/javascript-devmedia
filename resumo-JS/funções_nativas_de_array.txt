@@ -77,5 +77,57 @@ array.forEach((elemento, índice, array) => {
 
  A função nativa *map* em JavaScript cria um novo array ao aplicar no array de origem, sem modificar o array de indicado (o array de origem). Ideal para transformações em dados.
 
+-SINTAXE:
+const dias = ["domingo", "segunda", "terça"];
+const dias_sub = dias.map(dia => dia.substring(0, 3));
+console.log(dias_sub); // [ 'dom', 'seg', 'ter' ]
 
 
+ Muito utilizado para replicar um array com alterações, aparti de um array indicado!
+
+A Função precisa de um callback. Um elemento a ser indicado entre parênteses.
+-------------------------------------------------
+
+
+	.filter()
+	---------
+
+ A função nativa filter em JavaScript é usada para criar um novo array contendo apenas os elementos do array original que atendem a uma condição específica (retornam true em uma função de callback).
+
+-SINTAXE:
+const numeros = [5, 12, 8, 130, 44];
+const maioresQue10 = numeros.filter((numero) => numero > 10);
+console.log(maioresQue10); // [12, 130, 44]
+
+
+- Quando usar filter?
+ ● Quando você precisa selecionar elementos específicos de um array com base em uma condição.
+
+ ● Exemplo: Filtrar valores, objetos, strings ou qualquer tipo de dado.
+-------------------------------------------------
+
+
+	.reduce()
+	---------
+ Ela é usada para reduzir um array a um único valor, aplicando uma função de callback que acumula resultados durante a iteração.
+
+-SINTAXE:
+array.reduce(callback(acumulador, elemento, indice, array), valorInicial);
+
+-Parâmetros:
+ ● callback: Função executada para cada elemento do array.
+
+ ● acumulador: O valor acumulado ao longo das iterações.
+
+ ● elemento: O elemento atual do array.
+
+indice (opcional): O índice do elemento atual.
+
+ ● array (opcional): O array completo que está sendo iterado.
+
+
+-Quando usar reduce?
+Use reduce quando:
+ ● Você precisa de um único valor como saída (número, string, objeto, etc.).
+
+ ● Precisa combinar elementos do array de forma personalizada (ex.: somar, agrupar, contar, concatenar).
