@@ -1,12 +1,13 @@
-//          A função .push()
+//        ###  A função .push() - NÃO FORNECIDO-----------------------------
 let dias_semana = ["domingo", "segunda", "terça"];
 
 dias_semana.push("quanta"); //adicionado na ultima posição
 console.log(dias_semana);
 console.log("\n");
+//------------------------------------------------------------------------------
 
 
-//          A função .splice()
+//       ###   A função .splice() - NÃO FORNECIDO-----------------------------
 // array.splice(índiceInicial, númeroDeElementosParaRemover, ...elementosParaAdicionar);
 let array = ["domingo", "segunda", "terça"];
 array.splice(2, 1,) // Removendo elemento da 3º posição (com índice 2)
@@ -16,9 +17,10 @@ array.splice(3, 0, "quanta-feira") // Adicionando elemento na posição 4 (indic
 array.splice(2, 0, "terça-feira") // Substituindo elemento
 console.log(array);
 console.log('\n');
+//------------------------------------------------------------------------------
 
 
-//          A função .splice()  ------CÓDIGO FORNECIDO COMO EXEMPLO---------
+//        ###  A função .splice()  ------CÓDIGO FORNECIDO COMO EXEMPLO---------
 const produto = {
     nome: 'New Super Mario Bros.', qnt: 1, valor: 250
 };
@@ -42,7 +44,7 @@ console.log('\n');
 //------------------------------------------------------------------------------
 
 
-//          A função .forEach()  -------CÓDIGO FORNECIDO COMO EXEMPLO---------
+//        ###  A função .forEach()  -------CÓDIGO FORNECIDO COMO EXEMPLO---------
 const produtos = [
     { id: 1, nome: 'Açucar', estoque: 100, valor: 2.00 },
     { id: 2, nome: 'Álcool 70', estoque: 50, valor: 9.95 },
@@ -80,7 +82,7 @@ console.log('\n');
 //------------------------------------------------------------------------------
 
 
-//          A função .map()  ------CÓDIGO FORNECIDO COMO EXEMPLO---------
+//        ###  A função .map()  ------CÓDIGO FORNECIDO COMO EXEMPLO---------
 
 const carros = [
     { marca: 'Fiat', modelo: 'Uno', anoFabricacao: 2015 },
@@ -127,10 +129,57 @@ console.log('\n');
     'Jul', 'Ago', 'Set',
     'Out', 'Nov', 'Dez'
 ] */
-//----------------------CONTINUAÇÃO - NÃO FORNRCIDO-----------------------------
+//----------------------CONTINUAÇÃO - NÃO FORNECIDO-----------------------------
 
 
 const dias = ["domingo", "segunda", "terça"];
+
 const dias_map = dias.map(dia => dia.substring(0, 3));
 console.log(dias_map); // [ 'dom', 'seg', 'ter' ]
+console.log('\n');
+//------------------------------------------------------------------------------
+
+
+//        ###  A função .filter()  ------CÓDIGO FORNECIDO COMO EXEMPLO---------
+const carros_car = [
+    { marca: 'Fiat', modelo: 'Uno', anoFabricacao: 2015 },
+    { marca: 'GM', modelo: 'Onix', anoFabricacao: 2018 },
+    { marca: 'Ford', modelo: 'KA+', anoFabricacao: 2018 },
+    { marca: 'Fiat', modelo: 'Cronos', anoFabricacao: 2020 },
+];
+
+function retornarCarroFiat(carro) {
+    return (carro.marca == 'Fiat');
+};
+
+const carrosFiat = carros_car.filter( retornarCarroFiat ); // RECEBI O VALOR QUE ESTA EM PARAMENTROS DA FUNÇÃO
+
+console.log(carrosFiat);
+console.log('\n');
+/*
+  * vai imprimir:
+[
+    { marca: 'Fiat', modelo: 'Uno', anoFabricacao: 2015 },
+    { marca: 'Fiat', modelo: 'Cronos', anoFabricacao: 2020 }
+] */
+//------------------------------------------------------------------------------
+
+
+//        ###  A função .reduce()  ------CÓDIGO FORNECIDO COMO EXEMPLO---------
+const itensCarrinho = [
+    { id: 1, nome: 'Açucar', qnt: 2, valor: 2.00 },
+    { id: 2, nome: 'Álcool 70', qnt: 3, valor: 9.95 },
+    { id: 3, nome: 'Luvas descartáveis', qnt: 50, valor: 2.50 },
+    { id: 4, nome: 'Papel toalha', qnt: 1, valor: 2.00 },
+];
+
+function somarValor (total, itemCarrinho) {
+    const valorTotal = itemCarrinho.qnt * itemCarrinho.valor;
+    return total + valorTotal;
+};
+
+const valorAPagar = itensCarrinho.reduce(somarValor, 0); // RECEBI O VALOR QUE ESTA EM PARAMENTROS DA FUNÇÃO
+
+console.log("Valor total dos itens: " + valorAPagar);  // vai imprimir: 160.85
+console.log('\n');
 //------------------------------------------------------------------------------
