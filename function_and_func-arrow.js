@@ -128,3 +128,10 @@ let data = new Date();
 const nome_signo = retorna_signos(array_signos, data);   // PASSANDO VALORES DE ARRAY PARA A => FUN. ARROW
 
 console.log("O signo de hoje é: " + nome_signo);
+// ----------------------------------------------------------------
+
+//--------------------- FUNÇÃO ANÔNIMA ----------------------------
+
+(function() {
+    console.log("Executado imediatamente!");
+})();   
