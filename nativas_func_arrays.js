@@ -183,3 +183,28 @@ const valorAPagar = itensCarrinho.reduce(somarValor, 0); // RECEBI O VALOR QUE E
 console.log("Valor total dos itens: " + valorAPagar);  // vai imprimir: 160.85
 console.log('\n');
 //------------------------------------------------------------------------------
+
+
+//          A função .sort()  ------CÓDIGO FORNECIDO COMO EXEMPLO---------
+const frutas = ['Manga', 'Laranja', 'Tangerina', 'Banana'];
+
+frutas.sort();
+
+console.log("Array depois da ordenação:");
+console.info(frutas);  // console.info() é similar ao console.log(), Mas possui significado semântico.
+console.log("\n");
+
+//-------------------------CONTINUAÇÃO---------------------------------
+
+const numeros = [40, 1, 200, 5];
+
+function ordenaNumeros(a, b){
+    return a - b;
+};
+
+numeros.sort(ordenaNumeros);
+// numeros.sort((a, b) => a - b);
+
+console.log("Array depois da ordenação:");
+console.info(numeros);
+console.log("\n");
