@@ -182,6 +182,21 @@ const valorAPagar = itensCarrinho.reduce(somarValor, 0); // RECEBI O VALOR QUE E
 
 console.log("Valor total dos itens: " + valorAPagar);  // vai imprimir: 160.85
 console.log('\n');
+
+//-------------------------CONTINUAÇÃO---------------------------------
+
+const itensOpcionais = [
+    { nome: 'Pré som', valor: 800 },
+    { nome: 'Conta-giros', valor: 500 },
+    { nome: 'Desembaçador traseiro', valor: 1000 },
+    { nome: 'Ar quente', valor: 1800 },
+];
+
+const valorTotal = itensOpcionais.reduce( ( total, item ) => {  // O segundo argumento vai percorrer o array
+    return total + item.valor;
+}, 0);  // O 0 no final é o valor inicial do acumulador (total).
+
+console.log('R$ ' + valorTotal.toFixed(2));
 //------------------------------------------------------------------------------
 
 
