@@ -75,7 +75,7 @@ array.forEach((elemento, índice, array) => {
 	.map()
 	------
 
- A função nativa *map* em JavaScript cria um novo array ao aplicar no array de origem, sem modificar o array de indicado (o array de origem). Ideal para transformações em dados.
+ A função nativa *map* em JavaScript cria um novo array ao aplicar no array de origem, sem modificar o array indicado (o array de origem). Ideal para transformações em dados.
 
 -SINTAXE:
 const dias = ["domingo", "segunda", "terça"];
@@ -85,7 +85,7 @@ console.log(dias_sub); // [ 'dom', 'seg', 'ter' ]
 
  Muito utilizado para replicar um array com alterações, aparti de um array indicado!
 
-A Função precisa de um callback. Um elemento a ser indicado entre parênteses.
+ A Função precisa de um callback. Um elemento a ser indicado entre parênteses.
 -------------------------------------------------
 
 
@@ -131,3 +131,29 @@ Use reduce quando:
  ● Você precisa de um único valor como saída (número, string, objeto, etc.).
 
  ● Precisa combinar elementos do array de forma personalizada (ex.: somar, agrupar, contar, concatenar).
+-------------------------------------------------
+
+
+	.sort()
+	-------
+
+ O método nativo *sort()*, usado para ordenar elementos de arrays. Ele também modifica o array original e, por padrão, ordena os elementos como strings em ordem alfabetica (lexicográfica).
+
+-OBS: para ordenação de array númerico. O sort faz uma leitura de casa númerica, então 10 pode vim à frente de 2.
+
+-SINTAXE:
+const numeros = [40, 1, 200, 5];
+numeros.sort((a, b) => a - b); // Ordem crescente
+console.log(numeros); // Saída: [1, 5, 40, 200]
+
+numeros.sort((a, b) => b - a); // Ordem decrescente
+console.log(numeros); // Saída: [200, 40, 5, 1]
+
+
+-Resumo do Papel de (a, b):
+Eles representam dois elementos do array sendo comparados.
+ - A diferença (a - b) determina a ordem:
+  ● Valor negativo: a vem antes de b.
+  ● Valor positivo: a vem depois de b.
+  ● Valor zero: a e b são equivalentes para ordenação.
+
