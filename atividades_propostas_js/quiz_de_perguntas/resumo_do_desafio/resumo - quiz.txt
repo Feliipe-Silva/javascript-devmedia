@@ -1,0 +1,48 @@
+ 
+    Aplicação de um Quiz de Fatos Históricos
+-------------------------------------------------
+
+ A proposta desse projeto é criar uma aplicação de quiz de fatos históricos em JavaScript. Poderá colocar em prática os seguintes conceitos:
+
+ - Manipular coleção de dados;
+ - Uso de métodos de array;
+ - Array.sort();
+ - Array.slice();
+ - Array.forEach();
+ - Uso de funções JavaScript;
+
+
+O projeto que será criado tem como diferencial:
+- Uso de uma coleção de dados para armazenar informações;
+
+- A utilização de métodos de array para exibir 10 perguntas aleatórias;
+
+- A criação de funções JavaScript para deixar o código organizado e fácil de ser reutilizado;
+
+
+ O quiz desafia o jogador com 10 perguntas sobre fatos históricos. Cada pergunta requer que o jogador digite o ano em que o evento histórico ocorreu (não há opções de múltipla escolha).
+
+ Após completar as 10 perguntas, o nome do jogador(a), a pontuação final (n° de perguntas acertadas) e uma mensagem de encerramento serão exibidos, com a mensagem de encerramento variando conforme a pontuação total alcançada pelo jogador(a).
+
+ Quando o Quiz é iniciado, uma pergunta selecionada aleatoriamente da coleção de dados é exibida para o usuário.
+
+
+ 1 - Como selecionar perguntas aleatórias da coleção:
+- A) Embaralhar as perguntas da coleção usando o método Array.sort();
+
+const questoesEmbaralhadas = questoes.sort(() => Math.random() - 0.5);
+console.log(questoesEmbaralhadas);
+
+
+- B) Selecionar dez perguntas da coleção com o método Array.slice()
+
+questoesEmbaralhadas.slice(0, 10); // do indice 0 até 1 antes do indice 10
+
+
+- C) Exibir as perguntas selecionadas através do método Array.forEach()
+
+
+
+2 - Como organizar o código da aplicação com o uso de funções
+
+ Cada função pode ser projetada para realizar a menor quantidade possível de tarefas, tornando a leitura do código mais clara e simplificando futuras manutenções.
