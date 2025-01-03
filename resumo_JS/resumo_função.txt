@@ -1,0 +1,82 @@
+
+	FUNÇÃO (bloco de códigos)
+-------------------------------------------------
+
+Neste curso você aprenderá a trabalhar com:
+
+ ● Funções sem parâmetro;
+ ● Funções com parâmetro;
+ ● Arrow Functions.
+
+
+-- POR QUE SÃO ÚTEIS?
+1. Permitem que o código possa ser reaproveitado em uma aplicação.
+
+2. Facilita a manutenção do código, pois qualquer alteração é feita em um único lugar.
+
+3. Organização e clareza: Funções ajudam a dividir o código em partes menores e com propósito específico, o que facilita a leitura e manutenção.
+
+4. Utilizar funções ajudam na produtividade na hora de programar
+
+
+-- TIPOS DE FUNÇÕES
+
+● FUNÇOES SEM PARÂMETRO
+Funções sem parâmetro não vão receber valores para executar em seus bloco{};
+
+● FUNÇOES COM PARÂMETRO
+Parâmetro é um valor que uma função recebi para usar em seu bloco(aluno_1, aluno_2){};
+
+
+-- QUANDO USAR?
+Quando uma aplicação precisa executar em lugares diferentes, criamos uma função.
+
+RESUMO
+Retiramos o valor de uma função, atribuíndo a uma variável com o seu parênteses e parâmetros.
+
+ EXEMPLO: let status_aluno_1 = retorna_media(aluno_1, aluno_2);
+-------------------------------------------------
+
+
+	ARROW FUNCTION (ou função de seta)
+	----------------------------------
+
+ É uma maneira mais curta e moderna de escrever funções em JavaScript. Ela utiliza uma sintaxe simplificada e tem algumas diferenças importantes em relação às funções tradicionais, especialmente no que diz respeito ao tratamento do this.
+
+
+-EXEMPLO:
+const soma_valores = (v1, v2) => { return (v1 + v2) / 2};
+
+let resultado = soma_valores(10, 5);
+console.log(resultado); // Saída: 7.5
+
+
+-EXEMPLO SIMPLES:
+const soma = (a, b) => a + b;
+
+console.log(soma(15, 10)); // Saída: 25
+
+
+// AQUI ABAIXO TEM O MESMO RESULTADO!
+colecao_signos[0].nome
+	ou
+colecao_signos[0]["Nome"]
+
+// QUANDO QUISER ACESSA COLEÇAO DE OBJETOS
+-------------------------------------------------
+
+
+	FUNÇÃO ANÔNIMA
+	--------------
+
+ Uma função anônima em JavaScript é uma função sem nome, definida diretamente onde será usada. Ela pode ser atribuída a uma variável, passada como argumento para outra função ou usada imediatamente no local.
+
+-EXEMPLO:
+const soma = function(a, b) {
+    return a + b;
+};
+console.log(soma(2, 3)); // 5
+
+
+Quando usar:
+ ● Uso único: Em callbacks, event handlers ou outras situações onde a função não será reutilizada.
