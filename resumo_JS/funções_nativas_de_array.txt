@@ -1,0 +1,187 @@
+
+ É muito comum utilizarmos um array em um projeto e por isso precisamos aprender como manipulá-lo.
+
+ Neste curso você aprenderá a manipular um array utilizando as seguintes funções nativas:
+
+ ● push
+ ● splice
+ ● pop
+ ● shift
+ ● forEach
+ ● map
+ ● filter
+ ● reduce
+ ● sort
+
+
+### POR QUER EXISTE FUNÇÕES NATIVAS
+ - Existem alguns códigos que utilizamos diversas vezes.
+
+ - Escrever esse códigos todas as vezes que precisamos é muito mais propicil a erros. Por isso existe função nativa (código pronto!).
+
+ - Funções nativas reduz códigos repetitivos e agiliza o processo de desenvolvimento.
+-------------------------------------------------
+
+	.PUSH()
+	-------
+ 
+ A função *push* em JavaScript é usada para adicionar um ou mais elementos ao final de um array, retornando o novo comprimento do array.
+
+-EX: 
+let dias_semana = ["domingo", "segunda", "terça"];
+
+dias_semana.push("quanta"); //adicionado na ultima posição
+-------------------------------------------------
+
+
+	.SPLICE()
+	---------
+
+ A função *splice* em JavaScript é usada para adicionar, remover ou substituir elementos em um array. Sua sintaxe é:
+
+-EX:
+array.splice(índiceInicial, númeroDeElementosParaRemover, ...elementosParaAdicionar);
+
+array.splice(2, 1,) // Removendo elemento da 3º posição (com índice 2)
+
+array.splice(3, 0, "quanta-feira") // Adicionando elemento na posição 4 (indice 3)
+
+array.splice(2, 0, "terça-feira") // Substituindo elemento
+-------------------------------------------------
+
+
+	.forEach()
+	----------
+
+ A função nativa *forEach* em JavaScript é usada para iterar sobre elementos de um array, executando uma função callback para cada item. Ela não retorna valores e não pode ser interrompida, diferentemente de um loop for.
+
+Sintaxe:
+array.forEach((elemento, índice, array) => {
+  // código a ser executado
+});
+
+
+-Pontos principais:
+ ● Parâmetros da callback: elemento (valor atual), índice (posição do elemento), array (o array completo, opcional).
+
+ ● Não retorna valor: Sempre retorna undefined.
+
+ ● Não interrompível: Não suporta break ou return para parar a execução.
+
+ ● Ideal para efeitos colaterais (como logs ou manipulações externas).
+-------------------------------------------------
+
+
+	.map()
+	------
+
+ A função nativa *map* em JavaScript cria um novo array ao aplicar no array de origem, sem modificar o array indicado (o array de origem). Ideal para transformações em dados.
+
+-SINTAXE:
+const dias = ["domingo", "segunda", "terça"];
+const dias_sub = dias.map(dia => dia.substring(0, 3));
+console.log(dias_sub); // [ 'dom', 'seg', 'ter' ]
+
+
+ Muito utilizado para replicar um array com alterações, aparti de um array indicado!
+
+ A Função precisa de um callback. Um elemento a ser indicado entre parênteses.
+-------------------------------------------------
+
+
+	.filter()
+	---------
+
+ A função nativa filter em JavaScript é usada para criar um novo array contendo apenas os elementos do array original que atendem a uma condição específica (retornam true em uma função de callback).
+
+-SINTAXE:
+const numeros = [5, 12, 8, 130, 44];
+const maioresQue10 = numeros.filter((numero) => numero > 10);
+console.log(maioresQue10); // [12, 130, 44]
+
+
+- Quando usar filter?
+ ● Quando você precisa selecionar elementos específicos de um array com base em uma condição.
+
+ ● Exemplo: Filtrar valores, objetos, strings ou qualquer tipo de dado.
+-------------------------------------------------
+
+
+	.reduce()
+	---------
+ Ela é usada para reduzir um array a um único valor, aplicando uma função de callback que acumula resultados durante a iteração.
+
+-SINTAXE:
+array.reduce((acumulador, elemento.chave), valorInicial);
+
+-Parâmetros:
+ ● acumulador: O valor acumulado ao longo das iterações. Então para cada interação é como se houvesse um retorno. Mas, no caso o valor final é a soma de todos!
+
+ ● elemento: O elemento(ou chave) atual do array.
+
+
+-Quando usar reduce?
+ ● Se você precisar de um único valor como saída (número, string, objeto, etc.).
+
+ ● Combinar elementos do array de forma personalizada (ex.: somar, agrupar, contar, concatenar).
+-------------------------------------------------
+
+
+	.sort()
+	-------
+
+ O método nativo *sort()*, usado para ordenar elementos de arrays. Ele também modifica o array original e, por padrão, ordena os elementos como strings em ordem alfabetica (lexicográfica).
+
+-OBS: para ordenação de array númerico. O sort faz uma leitura de casas númerica, então 10 pode vim à frente de 2.
+
+-SINTAXE:
+const numeros = [40, 1, 200, 5];
+numeros.sort((a, b) => a - b); // Ordem crescente
+console.log(numeros); // Saída: [1, 5, 40, 200]
+
+numeros.sort((a, b) => b - a); // Ordem decrescente
+console.log(numeros); // Saída: [200, 40, 5, 1]
+
+
+-Resumo do Papel de (a, b):
+Eles representam dois elementos do array sendo comparados.
+ - A diferença (a - b) determina a ordem:
+  ● Valor negativo: a vem antes de b.
+  ● Valor positivo: a vem depois de b.
+  ● Valor zero: a e b são equivalentes para ordenação.
+
+
+ Quando você usa *.sort()* em um array de objetos, a função de comparação precisa ser especificada(com parâmetros) para garantir que os objetos sejam ordenados.
+
+
+-Exemplo básico de ordenação de objetos:
+const pessoas = [
+    { nome: 'João', idade: 25 },
+    { nome: 'Ana', idade: 22 },
+];
+
+pessoas.sort((a, b) => {
+   if (a.nome < b.nome) {
+      return -1;   // a vem antes de b
+   };
+
+});
+
+console.log(pessoas);
+
+
+ Comparação Lexicográfica: Quando você escreve *a.nome < b.nome*, o JavaScript vai comparar as strings caractere por caractere, da esquerda para a direita, até encontrar uma diferença.
+
+ ● Se o primeiro caractere de *a.nome* for menor (em termos de Unicode) que o primeiro caractere de *b.nome*, então *a.nome* é considerado "menor" que *b.nome*.
+
+ ● código compara "João" e "Ana", o JavaScript olha os primeiros caracteres.
+-------------------------------------------------
+
+
+Math.floor()
+Math.random()
+
+
+
+A função Math.floor() não altera o array, apenas retorna o valor arredondado, então é necessário armazenar o resultado em uma variável se você quiser utilizá-lo.
+
