@@ -8,21 +8,22 @@ function sempara(){
 
 let mens = sempara();
 console.log(mens);
+console.log('\n');
 
 
 
 //----FUNÇÃO COM PARÂMETROS
 function retorna_media(nota_1, nota_2) {
-let media = (nota_1 + nota_2) / 2;
-let status;
+    let media = (nota_1 + nota_2) / 2;
+    let status;
 
-if (media >= 6) {
-    status = 'Aprovado';
-} else {
-    status = 'reprovado';
-};
+    if (media >= 6) {
+        status = 'Aprovado';
+    } else {
+        status = 'reprovado';
+    };
 
-return status
+    return status
 };
 
 let aluno_1 = retorna_media(8, 5);
@@ -57,7 +58,7 @@ let aluno_02 = retorna_media_aluno(5, 5);
 
 console.log('1° aluno: '+aluno_01);
 console.log('2° aluno: '+aluno_02);
-
+console.log('\n');
 
 
 //----FUNCTION ARROW SIMPLES 
@@ -67,14 +68,14 @@ let resultado = soma_valores(10, 5);
 resultado = resultado.toString().replace('.',',');
 
 console.log(resultado); // Saída: 7,5
-
+console.log('\n');
 
 
 //----ARROW SIMPLES SEM (return declarado)
 const soma = (a, b) => a + b;
 
 console.log(soma(15, 10)); // Saída: 25
-
+console.log('\n');
 
 
 //--------------EXERCITANDO UMA APLICAÇÃO SIGNOS HOJE. -------------------
@@ -110,7 +111,7 @@ const retorna_signos = (array_signos, data) => {      // FUNC. ARROW
     
     let ano = data.getFullYear();
     
-    for (let signo of array_signos) {     // LOOP (leitura do objeto, array_signos) PELO FOR, OF
+    for (let signo of array_signos) {     // LOOP (leitura dos objetos -> array_signos) PELO FOR, OF
     
         let data_inicio = new Date(ano + "-" + signo["DataInicio"] + " 00:00:00");
         let data_fim = new Date(ano + "-" + signo["DataFim"] + " 23:59:50");
@@ -128,7 +129,9 @@ let data = new Date();
 const nome_signo = retorna_signos(array_signos, data);   // PASSANDO VALORES DE ARRAY PARA A => FUN. ARROW
 
 console.log("O signo de hoje é: " + nome_signo);
+console.log('\n');
 // ----------------------------------------------------------------
+
 
 //--------------------- FUNÇÃO ANÔNIMA ----------------------------
 
