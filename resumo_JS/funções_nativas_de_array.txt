@@ -176,12 +176,3 @@ console.log(pessoas);
 
  ● código compara "João" e "Ana", o JavaScript olha os primeiros caracteres.
 -------------------------------------------------
-
-
-Math.floor()
-Math.random()
-
-
-
-A função Math.floor() não altera o array, apenas retorna o valor arredondado, então é necessário armazenar o resultado em uma variável se você quiser utilizá-lo.
-
