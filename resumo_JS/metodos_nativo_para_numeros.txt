@@ -15,7 +15,7 @@ num.toFixed(6); // Retorna '12345.678900'
 
 -------------------FUNÇÃO parseInt---------------------
 
-	avaScript é usada para converter uma string em um número inteiro.
+	JavaScript é usada para converter uma string em um número inteiro.
 
   ---Parâmetros:
 string: A string que você deseja converter.
