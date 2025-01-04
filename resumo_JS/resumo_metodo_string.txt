@@ -1,0 +1,195 @@
+	MÉTODO NATIVO 
+
+ Neste curso você vai aprender a manipular strings utilizando os seguintes recursos nativos:
+
+ Métodos:
+* toLowerCase/toUpperCase
+* trim
+* padStart/padEnd
+* replace
+* substring
+* indexOf
+* split
+
+ Esses métodos já estão prontos para serem usados, bastando apenas chamá-los.
+
+As vantagens do uso desses recursos nativos são:
+
+* Redução de código repetitivo;
+* Economia de tempo;
+* Aceleramento no processo de desenvolvimento.
+
+Além disso vale lembrar que as strings são cadeias de caracteres, o que nos permite acessar um caractere específico dentro de uma string.
+
+EXEMPLO: console.log("Aqui é um texto curto."[0]);  // IMPRIME: A
+
+ Formas de declará "STRINGS":
+
+* Entre aspas simples: 'Hello Wold'
+* Entre aspas duplas: "Hello Wold"
+* Entre Template string: `Hello Wold`
+
+ Vantagens de utilizar o Template string, é a quebra de linha. Utiliza-se apenas o (ENTER).
+
+ Com aspas simples e dupla, necessita de (\n), para quebra de linha.
+
+ Para concaterna com utilização do Template string fica mais simples e de fácil entendimento.
+
+ EXEPLO: 
+let curso = "Tecnologia"
+console.log(`Estudo ${curso}`);
+
+ Template string, permite inserir variáveis junto com o texto, ou seja, tudo dentro de acentos graves.
+-------------------------------------------------
+
+
+	OBTENDO TAMANHOS DE STRINGS
+	---------------------------
+
+ Função length, ao chama-lá retornará o comprimento de uma string e arrays. Para obter comprimento de objeto é preciso usa o Object.keys(nomeObjeto).length.
+
+-EXEMPLO: 
+let cep = "23010-090";
+
+if (cep.length != 9){
+
+  console.log("O CEP deve ter 9 caracteres");
+}
+
+
+ Length, não faz comprimento de numbers. Então, é preciso converter para STRING com a função toString().
+	                                          
+EXEMPLO:
+let cep = 60755220;
+console.log(cep.toString().length)	// 8 
+-------------------------------------------------
+
+
+	STRING MAIÚSCULAS E MENÚSCULAS
+	-------------------------------
+	toUpperCase()  e  toLowerCase()
+
+ Às vezes uma informação de acesso - por exemplo, um e-mail - pode ser cadastrada com letras maiúsculas ou minúsculas. Isso pode causar diferenças na validação dessa informação.
+
+-EXEMPLO: 
+const email_digitado = "";
+const email_acesso = "PEDRO@gmail.com";
+
+if ( email_digitado.toLowerCase() == email_acesso.toLowerCase() ) {
+	console.log("Foi enviado um link de ativação ao seu email.");
+
+} else {
+	console.log("Email não foi encontrado em nossa base de dados.");
+}
+
+
+ Quando você coleta dados de formulários, como nomes de usuários ou senhas, pode ser útil normalizar a entrada de strings.
+-------------------------------------------------
+
+  Removendo espaços do início e do final de uma string. Com o método trim();
+  ---------------------------------------------
+ 
+-EXEMPLO:
+let telefone_1 = "(99) 99999-9999";
+let telefone_2 = "    (99) 99999-9999    ";
+
+if ( telefone_1 == telefone_2 ){
+    console.log("Os telefones são iguais");
+} else {
+    console.log("Os telefones são diferentes");
+} 
+// RESULTADO: Os telefones são diferentes
+
+
+ Antes de comparar dados precisamos tratá-los. Uma das formas de tratar os dados é remover espaços desnecessários, pois caso contrário, podem trazer problemas na comparação.
+
+ Geralmente o método trim() é usado no cadastro e na validação de dados
+
+-EXEMPLO: if ( telefone_1.trim() == telefone_2.trim() )
+
+// RESULTADO: Os telefones são iguais
+-------------------------------------------------
+
+	Preenchendo strings com espaços.
+	--------------------------------
+	padStart() e padEnd()
+
+ Com os métodos padStart() e padEnd() é possível alinhar informações com a linguagem JavaScript de forma que a exibição dos dados não fique desordenada.
+
+ Com isso pode ser necessário fazer o alinhamento dessas informações para que a exibição delas fique mais 'agradável' em coluna.
+
+-EXEMPLO: 
+let nome = "José ";
+let tel = '(99) 99999-9999';
+let email = "contato@email.com";
+
+console.log("Nome:".padEnd(20, '.') + nome);
+console.log("telefone:".padEnd(20, '.') + tel);
+console.log("Email:".padEnd(20, '.') + email);
+-------------------------------------------------
+
+
+	Substituindo partes de string
+	-----------------------------
+	replace()
+
+ 
+ Em algum momento pode ser necessário trocar uma substring de um texto por outra. Em várias situações onde é necessário correção ou padronização de textos.
+
+ O método replace() procura a primeira vez que o termo aparece e substitui pelo termo desejado.
+
+-EXEMPLO:
+let texto = "A linguagem PHP é muito poderosa";
+
+console.log(texto.replace("PHP", "JavaScript"));
+// A linguagem JavaScript é muito poderosa
+-------------------------------------------------
+
+
+	Retornando partes de string
+	---------------------------
+		substring().
+
+ O substring() é um método nativo do JavaScript que nos permite extrair partes de uma string.
+
+ LEMBRANDO que sua pósição inícial é (0). E para, uma pósição antes!
+
+-EXEMPLO: 
+let frase = "Eu sou programador JavaScript";
+
+console.log(frase.substring(7, 18));    // programador
+
+ Quando indicamos somente um valor, a substring entende que deve extrair começando da posição inícial até o final da frase.
+
+-OUTRO EXEMPLO:
+console.log(frase.substring( 7 ));  
+// programador JavaScript
+-------------------------------------------------               
+	
+	Procurando a pósição de uma string
+	----------------------------------
+		indexOf()
+
+ Procurar uma substring dentro de uma string é uma tarefa comum na rotina do desenvolvedor.
+
+-EXEMPLO:
+let frase = "O Brasil é um país maravilhoso";
+let posicao = frase.indexOf("Brasil");
+console.log(posicao);   // 2
+
+ Quando o método indexOf() encontra a substring dentro de uma string, ele retorna a posição onde a substring foi encontrada. Caso não encontre ele retorna o valor -1.
+-------------------------------------------------
+
+
+	Separando strings em partes
+	----------------------------
+		split()
+
+ O método split() é muito útil para extrair dados de strings maiores. Assim é importante saber como é a composição da string para identificar o caractere que será usado como separador.
+
+-EXEPLO:
+let lista = "maçã banana laranja";
+let frutas = lista.split(" ");
+console.log(frutas);    // [ 'maçã', 'banana', 'laranja' ]
+
+ Após separar, virando um array, pode acessa usando indíces frutas[0], frutas[1], frutas[2].
