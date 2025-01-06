@@ -176,3 +176,39 @@ console.log(pessoas);
 
  ● código compara "João" e "Ana", o JavaScript olha os primeiros caracteres.
 -------------------------------------------------
+
+
+	.slice()
+	--------
+
+ A função *.slice()* em JavaScript é usada para extrair uma parte de um array ou string sem modificar o original. Ela retorna uma cópia rasa da seção selecionada.
+
+-Sintaxe:
+array.slice([start], [end]);
+string.slice([start], [end]);
+
+
+ ● start: índice onde a extração começa (inclusivo).
+
+ ● end: índice onde a extração termina (exclusivo). Até o índice final -1.
+
+ ● Aceita índices negativos, que contam a partir do final (-1 refere-se ao último elemento).
+
+
+-EXEMPLOS:
+const array = [10, 20, 30, 40, 50];
+console.log(array.slice(1, 4)); // [20, 30, 40]
+// Índices 1 (inclusive) até 4 (exclusivo).
+
+
+const texto = "JavaScript";
+console.log(texto.slice(0, 4)); // "Java"
+// Índices 0 (inclusive) até 4 (exclusivo).
+
+
+-Pontos indispensáveis:
+ ● Não modifica o original: ótimo para manter imutabilidade.
+ ● Flexibilidade com índices negativos: fácil para lidar com o final de arrays.
+ ● Desempenho em operações simples: eficiente para criar cópias de partes de dados.
+
+ Se você trabalha com manipulação de dados em interfaces, a *.slice()* é indispensável em projetos como paginação, visualizações resumidas e manutenção de imutabilidade.
