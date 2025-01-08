@@ -112,7 +112,21 @@ console.log(maioresQue10); // [12, 130, 44]
  Ela é usada para reduzir um array a um único valor, aplicando uma função de callback que acumula resultados durante a iteração.
 
 -SINTAXE:
-array.reduce((acumulador, elemento.chave), valorInicial);
+array.reduce(function(acumulador, elemento.propriedade), valorInicial){ 
+ // lógica de acumulação
+};
+
+** O *reduce()* sempre tem que está apontando para uma função, ou conter uma função anônima!
+
+-EXEMPLO:
+function somar(acumulador, numeroAtual) {
+  return acumulador + numeroAtual;
+}
+
+const numeros = [1, 2, 3, 4];
+const soma = numeros.reduce(somar, 0);
+// Resultado: 10
+
 
 -Parâmetros:
  ● acumulador: O valor acumulado ao longo das iterações. Então para cada interação é como se houvesse um retorno. Mas, no caso o valor final é a soma de todos!
