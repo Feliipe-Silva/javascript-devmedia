@@ -178,7 +178,8 @@ function somarValor (total, itemCarrinho) {
     return total + valorTotal;
 };
 
-const valorAPagar = itensCarrinho.reduce(somarValor, 0); // RECEBI O VALOR QUE ESTA EM PARAMENTROS DA FUNÇÃO
+const valorAPagar = itensCarrinho.reduce((somarValor), 0); // RECEBI O VALOR QUE ESTA EM PARÂMETROS DA FUNÇÃO
+// poderia ser em um único parênteses porque o reduce jé espera receber uma função.
 
 console.log("Valor total dos itens: " + valorAPagar);  // vai imprimir: 160.85
 console.log('\n');
