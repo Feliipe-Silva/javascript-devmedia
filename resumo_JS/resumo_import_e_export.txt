@@ -1,0 +1,50 @@
+
+   IMPORTANDO E EXPORTANDO DADOS EM JAVASCRIPT
+-------------------------------------------------
+
+ Conforme a aplicação vai crescendo, surge a necessidade de dividir em arquivos, para uma melhor organização.
+
+
+-PRINCIPAIS RAZÕES:
+ ● Deixa o código mais legível e profissional.
+
+ ● Mais fácil para codificação e manutenção.
+
+ ● Escalabilidade: Ajuda a lidar com projetos maiores.
+
+ ● Evita conflitos: Reduz o risco de sobrescrever variáveis ou funções em escopos globais.
+
+
+ Ao separarmos o código em partes, integramos através do comando *import* e *export*.
+
+-EXEMPLOS:
+import colecao_signos from 'signos_hoje.js';
+export defalt colecao_signos;
+
+
+ A separação é preciso ser feita quando o código ta ficando muito grande. Então fica mais viável manter separado!
+
+
+-Resuminho:
+ ● *Export*: Torna variáveis, funções ou classes utilizáveis fora do módulo.
+
+ ● *Import*: Permite carregar e usar o que foi exportado de outros módulos.
+
+ ● Dois tipos principais de exportação: nomeada (*export*) e padrão (*export default*).
+-------------------------------------------------
+
+	
+	O QUE É MÓDULO?
+	---------------
+
+ Módulo em Javascript é o mesmo que *arquivos.js* que contém funções e dados exportados com o comando *export*.
+
+ Quando exportamos um recurso de módulo, podemos usá-lo em qualquer parte da aplicação. Bastando apenas importar.
+-------------------------------------------------
+
+
+ **OBS: Lembrando que para usar o *export* e *import* no terminal, ou no node.js os arquivos e ferramentas *package.json* deve ta instalado.
+
+ package.json fica na raiz do projeto. Dentro do pacote package.json, tem que inserir "type": "module";
+
+ O TUTORIAL ESTÁ NO RESUMO: input_no_terminal.
