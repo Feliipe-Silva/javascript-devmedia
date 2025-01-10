@@ -121,7 +121,7 @@ array.reduce(function(acumulador, elemento.propriedade), valorInicial){
 -EXEMPLO:
 function somar(acumulador, numeroAtual) {
   return acumulador + numeroAtual;
-}
+};
 
 const numeros = [1, 2, 3, 4];
 const soma = numeros.reduce(somar, 0);
