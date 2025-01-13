@@ -15,4 +15,4 @@ let array_signos = [
     {"Nome": "Capricórnio", "DataInicio": "12-22",      "DataFim":"01-19"}
 ];
 
-export default array_signos;
+export { array_signos }; // Importação Nomeada fica entre chaves -> {}

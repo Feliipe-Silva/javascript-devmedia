@@ -1,8 +1,8 @@
 //
 
-import array_signos from './colecao_signos.js';
+import { array_signos } from './colecao_signos.js';
 
-import retorna_signos from './retorna_signo.js';
+import retorna_signos from './retorna_signo.js';  // importação padrão posso declarar qualquer nome com o modúlo do arquivo. 
 
 let data = new Date();
 
