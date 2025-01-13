@@ -17,9 +17,19 @@
 
  Ao separarmos o código em partes, integramos através do comando *import* e *export*.
 
--EXEMPLOS:
+-EXEMPLO DE IMPORTAÇÃO E EXPORTAÇÃO PADRÃO:
 import colecao_signos from 'signos_hoje.js';
 export defalt colecao_signos;
+
+//  Exportação Padrão, utiliza default e não usa chaves{}, pode ser uma nome qualquer declarado.
+
+
+-EXEMPLO DE IMPORTAÇÃO E EXPORTAÇÃO NOMEADA:
+export { array_signos }; 
+import { array_signos } from './colecao_signos.js';
+
+// Exportação Nomeada fica entre chaves -> { }, com o nome de um array ou função e suporta outras exportação.
+
 
 
  A separação é preciso ser feita quando o código ta ficando muito grande. Então fica mais viável manter separado!
@@ -48,3 +58,16 @@ export defalt colecao_signos;
  package.json fica na raiz do projeto. Dentro do pacote package.json, tem que inserir "type": "module";
 
  O TUTORIAL ESTÁ NO RESUMO: input_no_terminal.
+--------------------------------------------------
+
+
+	module.exports e require
+	------------------------
+
+ São formas mais antigas de exportar e importar módulos em JavaScript, introduzidas originalmente no *Node.js* como parte do padrão *CommonJS*.
+
+ ● Foi o padrão inicial de módulos introduzido pelo Node.js.
+
+ ● É simples e direto, e ainda é amplamente utilizado em muitos projetos, principalmente em ambientes de backend.
+
+ ● Arquivos que usam CommonJS não precisam de configurações adicionais no Node.js, ES Modules.
