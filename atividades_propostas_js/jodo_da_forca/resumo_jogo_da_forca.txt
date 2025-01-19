@@ -1,0 +1,55 @@
+
+	JOGO DA FORCA
+	-------------
+
+ Visão geral do projeto
+A proposta desse projeto é criar uma aplicação de jogo da forca em JavaScript, para que você coloque em prática os seguintes conceitos:
+
+ ● Uso dos módulos import e export;
+ ● Uso de uma coleção de dados para armazenar as palavras (strings) do jogo;
+ ● Uso de métodos de string:
+  - String.repeat();
+  - String.split();
+
+ ● Uso de métodos de array:
+  - Array.join()
+
+ ● Uso de estruturas de repetição;
+ ● Uso de funções;
+
+ O projeto se destaca pelo uso dos recursos import e export do JavaScript, permitindo a divisão do código em arquivos menores.
+
+ Outro ponto importante desse projeto é que nele teremos uma coleção de dados para armazenar as palavras essenciais (nomes de frutas) para o jogo.
+
+ Além disso, o projeto fará uso dos métodos String.repeat(), String.split() e Array.join() para ocultar as palavras do jogo e revelar as letras que existam na palavra, conforme a resposta do usuário.
+
+ Para garantir o andamento do jogo, será implementado loops que irão executar o jogo até que uma condição de término seja alcançada. Esse processo inclui também a atualização da palavra oculta a cada interação do usuário (ao digitar a letra correta).
+
+ Para deixar o projeto mais organizado, será criado funções para separar o código em partes menores.
+
+
+ ------- EXEMPLO DE FLUXO DA APLICAÇÃO -------
+
+ A aplicação apresenta uma dica, informando a quantidade de letras do nome da fruta a ser adivinhada. Veja um exemplo:
+Ex.: Adivinhe o nome da fruta com 9 letras:
+
+ A seguir, o nome da fruta é exibido somente com a letra inicial visível, enquanto as outras letras são 'escondidas' com um underline. Veja um exemplo:
+Ex.: Fruta: C________
+
+ Para começar a adivinhar o nome da fruta, o jogador deve digitar uma letra que faça parte do nome da fruta. Por exemplo:
+Jogo -> Fruta: C________
+Resposta (digitada pelo usuário): a
+
+Jogo -> Fruta: Ca_a____a
+
+ O jogo permite apenas um jogador por rodada, e as respostas devem ser um único caractere alfabético, que serão inseridas diretamente no terminal.
+
+ Respostas como números ou mais de um caractere serão consideradas 'inválidas'.
+
+ Cada resposta do jogador(a) será verificada. Se a resposta estiver correta, a palavra oculta será atualizada com o caractere digitado e o jogador(a) será convidado a fornecer uma nova resposta.
+
+ Se a resposta do jogador(a) estiver errada, uma mensagem será exibida informando o erro e o número de chances restantes. Além disso, o usuário será convidado a fornecer uma nova resposta.
+
+ O jogador(a) terá quatro chances de erro antes do jogo ser encerrado, exibindo uma mensagem informando a derrota do jogador(a).
+
+ Após digitar as letras corretas e completar o nome da fruta, uma mensagem de encerramento será exibida, informando a vitória do jogador(a).
