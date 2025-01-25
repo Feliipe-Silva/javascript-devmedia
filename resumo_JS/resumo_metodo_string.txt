@@ -10,6 +10,7 @@
 * substring
 * indexOf
 * split
+* repeat
 
  Esses métodos já estão prontos para serem usados, bastando apenas chamá-los.
 
@@ -193,3 +194,23 @@ let frutas = lista.split(" ");
 console.log(frutas);    // [ 'maçã', 'banana', 'laranja' ]
 
  Após separar, virando um array, pode acessa usando indíces frutas[0], frutas[1], frutas[2].
+--------------------------------------------------
+
+
+	Padrão repetitivos de texto
+	---------------------------
+	         .repeat()
+
+ A função repeat() é usada em situações que envolvem padrões repetitivos, formatar textos, criar strings grandes para testes, ou até para efeitos visuais simples. Ela economiza tempo em tarefas que, de outra forma, exigiriam loops.
+
+
+-Sintaxe:
+string.repeat(count);
+
+-Regras:
+ ● count deve ser um número inteiro positivo ou zero.
+ ● Se count = 0, a string retornada será vazia ("").
+
+--EXEMPLO:
+console.log("-".repeat(20)); 
+// Resultado: "--------------------"
