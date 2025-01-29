@@ -10,7 +10,9 @@
 * substring
 * indexOf
 * split
+* join
 * repeat
+* match
 
  Esses métodos já estão prontos para serem usados, bastando apenas chamá-los.
 
@@ -194,6 +196,25 @@ let frutas = lista.split(" ");
 console.log(frutas);    // [ 'maçã', 'banana', 'laranja' ]
 
  Após separar, virando um array, pode acessa usando indíces frutas[0], frutas[1], frutas[2].
+-------------------------------------------------
+
+
+	Separando strings em partes
+	----------------------------
+		.join()
+
+ É uma função do JavaScript que transforma um array em uma string, unindo os elementos com um separador opcional.
+
+ Se nenhum separador for informado, usa vírgula (,) por padrão.
+
+
+-EXEMPLO:
+const frutas = ["maçã", "banana", "laranja"];
+console.log(frutas.join(" - ")); 
+// Saída: "maçã - banana - laranja"
+
+
+*Dica: Inverso do .split(), que quebra uma string e transforma em um array.
 --------------------------------------------------
 
 
@@ -214,3 +235,20 @@ string.repeat(count);
 --EXEMPLO:
 console.log("-".repeat(20)); 
 // Resultado: "--------------------"
+--------------------------------------------------
+
+	Buscar correspondência em strings
+	---------------------------------
+		.match();
+
+ É uma função do JavaScript que busca correspondências em uma string com base em uma expressão regular. Retorna um array com os resultados ou null se não houver correspondências.
+
+-EXEMPLO:
+const frase = "Eu amo JavaScript!";
+console.log(frase.match(/java/i)); 
+// Saída: ["Java"]
+
+
+*Dica:
+ ● Use /g para todas as ocorrências.
+ ● Use /i para ignorar maiúsculas e minúsculas.
