@@ -21,8 +21,6 @@ function atualizar_palavra_oculta( palavra_oculta, letra_digitada, fruta_selecio
 };
 
 
-
-
 function validar_letra_digitada( letra_digitada ) {
 
     if( letra_digitada.length === 1 && letra_digitada.match(/[a-z]/) ){

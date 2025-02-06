@@ -6,55 +6,35 @@ import {  atualizar_palavra_oculta, palavra_oculta, validar_letra_digitada } fro
 
 console.log("\n-------------JOGO DA FORCA-------------\n");
 console.log("**Adivinhe o nome da fruta com " + qtd_letras + " Letras\n");
+//---------------------------
 
 console.log("FRUTA: " + palavra_oculta);
 let letra_digitada = entrada.question("Digite uma letra: ").toLowerCase();
 
-let palavra_atualizada = atualizar_palavra_oculta( palavra_oculta, letra_digitada, fruta_selecionada );
-let statusJogo = 0;
+let status_erros = 4;
 
-while (statusJogo <= qtd_letras) {
+while ( palavra_oculta !== fruta_selecionada && status_erros > 0 ) {
+    console.log("\nFRUTA: " + palavra_oculta);
 
-    console.log(`\nFruta: ${ palavra_atualizada }`);
+    const letra_digitada = entrada.question("Digite uma letra: ").toLowerCase();
 
-    letra_digitada = entrada.question("Digite uma letra: ").toLowerCase();
-    atualizar_palavra_oculta( palavra_oculta, letra_digitada, fruta_selecionada );
-
-    /* A lógica do jogo entrará aqui */
-    if (validar_letra_digitada( letra_digitada )) {
+    if ( letra_digitada.length !== 1 || !letra_digitada.match(/[a-z]/) ) {
+        console.log("\nEntrada inválida. Por favor, digite apenas uma letra.");
         continue;
-
-        function atualizar_palavra_oculta( palavra_oculta, letra_digitada, fruta_selecionada ) {
-            let palavra_oculta_array = palavra_oculta.split('');
-        
-            for (let i = 0; i < fruta_selecionada.length; i++) {
-        
-                if (letra_digitada === fruta_selecionada[i]) {
-                    palavra_oculta_array[i] = letra_digitada;
-                };
-            };
-        
-            return palavra_oculta_array.join('');
-        };
-        
-        
-        
-        
-        function validar_letra_digitada( letra_digitada ) {
-        
-            if( letra_digitada.length === 1 && letra_digitada.match(/[a-z]/) ){
-                return true
-            } else {
-                return false
-            }
-        };
-
-    } else {
-        console.log("\nPor favor, digite uma letra válida.");
     }
+
+    if ( !fruta_selecionada.includes(letra_digitada) ) {
+        status_erros--;
+        console.log(`Letra incorreta! Você ainda tem ${status_erros} tentativas.`);
+    } else {
+        palavra_oculta = atualizar_palavra_oculta( palavra_oculta, letra_digitada, fruta_selecionada );
+    }
+}
+
+if (palavra_oculta === fruta_selecionada) {
+    console.log(`\nParabéns! Você acertou a palavra: ${fruta_selecionada.toUpperCase()}! 🎉`);
+} else {
+    console.log(`\nQue pena! Você perdeu. A palavra correta era: ${fruta_selecionada.toUpperCase()}.`);
 };
-
-
-// console.log(atualizar_palavra_oculta( palavra_oculta, letra_digitada, fruta_selecionada ));
 
 export { letra_digitada };

@@ -14,7 +14,7 @@ function fruta_aleatoria( ) {
     let comprimento_array = listaDeFrutas.length;
     let num_aleatorio = Math.floor( Math.random(0, 1) * comprimento_array );
 
-    return listaDeFrutas[num_aleatorio].trim();
+    return listaDeFrutas[num_aleatorio].trim().toLowerCase();
 };
 
 let fruta_selecionada = fruta_aleatoria();
