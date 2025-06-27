@@ -12,7 +12,7 @@ const n1 = 20 % 2 == 0;
 console.log(n1);   */
 
 
-/*  var produt01 = {        // OBJECT
+  var produt01 = {        // OBJECT
     id: 9,
     nome: "Cafeteira",
     preco: 19.99
@@ -20,6 +20,7 @@ console.log(n1);   */
 produt01.categoria = "Bazar"
 
 console.log(Object.keys(produt01).length);
+console.log(produt01.categoria);
 
 
 const livro = {};       // OBJECT FORNECIDO
@@ -33,11 +34,11 @@ const pessoa = {
     nome: "João",
     idade: 30,
     saudacao: function() {
-      return `Olá, meu nome é ${this.nome}`;
+        return `Olá, meu nome é ${this.nome}`;
     }
 };
 
-console.log(pessoa.saudacao);
+console.log(pessoa.saudacao());
 
 
 function Carro(marca, modelo, cor) {
@@ -48,7 +49,7 @@ function Carro(marca, modelo, cor) {
 
 const meuCarro = new Carro("Toyota", "Corolla", "preto");
 
-console.log(meuCarro); */
+console.log(meuCarro); 
 
 //-------------------------OBJETOS FORNECIDO------------------------------------
 
